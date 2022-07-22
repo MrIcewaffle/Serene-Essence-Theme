@@ -1,0 +1,6 @@
+live_config_reload: true
+
+cursor:
+  style: Block
+  unfocussed_hollow: true
+
