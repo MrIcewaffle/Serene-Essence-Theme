@@ -20,4 +20,4 @@ bspc rule -a Chromium
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
-feh --bg-fill $HOME/Wallpapers/yCSsycL.jpg
+feh --bg-fill $HOME/Wallpaper/yCSsycL.jpg
