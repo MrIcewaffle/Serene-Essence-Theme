@@ -5,12 +5,12 @@ baskergit="https://github.com/baskerville"
 
 ##install using 'assume-yes'
 install() {
-    apt --assume-yes install "$1" >/dev/null 2>&1
+    sudo apt --assume-yes install "$1" >/dev/null 2>&1
 }
 
 installbspdeps() {
     echo "Installing dependencies..."
-    apt --assume-yes install libxcb-xinerama0-dev libxcb-icccm4-dev libxcb-randr0-dev libxcb-util0-dev libxcb-ewmh-dev libxcb-keysyms1-dev libxcb-shape0-dev
+    sudo apt --assume-yes install libxcb-xinerama0-dev libxcb-icccm4-dev libxcb-randr0-dev libxcb-util0-dev libxcb-ewmh-dev libxcb-keysyms1-dev libxcb-shape0-dev
 }
 
 maketempdir() {
@@ -30,14 +30,14 @@ gitmakeinstall() {
 
     cd "$progpath" || exit 1
     make
-    make install
+    sudo make install
     cd /tmp || return 1
 }
 
 copyfonts() {
     echo "Copying fonts..."
-    mkdir ${HOME}/.local/share/fonts
-    cp -r "$wrkdir/.fonts/*" ${HOME}/.local/share/fonts/
+    cp -r "$wrkdir/.fonts" "${HOME}/"
+    echo "Refreshing fonts..."
     fc-cache -f -v
 }
 
